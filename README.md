@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 <p align="center">
-  <img src="assets/img/hr-system.png" width="100%">
+  <img src="public/assets/img/hr-system.png" width="100%">
 </p>
 
 # HR Management System
