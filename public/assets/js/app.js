@@ -11,6 +11,32 @@ const api = axios.create({
     }
 });
 
+async function getProfile()
+{
+    try {
+
+        const response = await api.get('/me');
+
+        const user = response.data;
+
+        document.getElementById('userName').innerText =
+            user.name;
+
+        document.getElementById('profileName').innerText =
+            user.name;
+
+        document.getElementById('profileEmail').innerText =
+            user.email;
+
+    } catch (error) {
+
+        logout();
+
+    }
+}
+
+getProfile();
+
 function logout()
 {
     localStorage.removeItem('token');
