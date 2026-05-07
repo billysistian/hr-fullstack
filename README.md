@@ -1,66 +1,275 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# HR Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+HR Fullstack Trigger Audit Log:
 
-## About Laravel
+* JWT Authentication
+* CRUD Karyawan
+* RESTful API
+* Trigger Audit Log
+* Audit Log DataTables
+* Export PDF
+* KaiAdmin Template
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* Laravel 11
+* MySQL / MariaDB
+* JWT Auth
+* Bootstrap 5
+* KaiAdmin
+* Axios
+* DataTables
+* DOMPDF
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Default Login
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```txt
+Email    : admin@gmail.com
+Password : pass123
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+# Instalasi Project
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 1. Clone Repository
 
-### Premium Partners
+```bash
+git clone <repository-url>
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## 2. Install Dependency
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 3. Copy Environment
 
-## Security Vulnerabilities
+Linux / Git Bash:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cp .env.example .env
+```
 
-## License
+Windows CMD:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+copy .env.example .env
+```
+
+---
+
+## 4. Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+---
+
+# Konfigurasi Database
+
+Buka file `.env`
+
+Sesuaikan konfigurasi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=HR
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+# Buat Database
+
+Buat database baru:
+
+```sql
+CREATE DATABASE HR;
+```
+
+---
+
+# Jalankan Migration
+
+```bash
+php artisan migrate
+```
+
+---
+
+# Jalankan Seeder
+
+```bash
+php artisan db:seed
+```
+
+Seeder akan membuat user default:
+
+```txt
+admin@gmail.com
+pass123
+```
+
+---
+
+# Setup JWT Secret
+
+```bash
+php artisan jwt:secret
+```
+
+---
+
+# Set Expired Token 1 Menit
+
+Tambahkan di `.env`
+
+```env
+JWT_TTL=1
+```
+
+---
+
+# Setup Database Trigger
+
+Jalankan file trigger SQL:
+
+## CMD
+
+```bash
+mysql -u root -p HR < database/sql/trigger.sql
+```
+
+## PowerShell
+
+```powershell
+Get-Content database/sql/trigger.sql | mysql -u root -p HR
+```
+
+---
+
+# Menjalankan Project
+
+```bash
+php artisan serve
+```
+
+Akses:
+
+```txt
+http://127.0.0.1:8000
+```
+
+---
+
+# Fitur Aplikasi
+
+## Authentication
+
+* Login JWT
+* Token expired 1 menit
+
+## Karyawan
+
+* Tambah data
+* Edit data
+* Hapus data
+* List data
+
+## Audit Log
+
+* Trigger INSERT
+* Trigger UPDATE
+* Trigger DELETE
+
+## Report
+
+* Export PDF
+
+---
+
+# API Endpoint
+
+## Login
+
+```http
+POST /api/login
+```
+
+---
+
+## Profile
+
+```http
+GET /api/me
+```
+
+---
+
+## CRUD Karyawan
+
+```http
+GET    /api/karyawan
+POST   /api/karyawan
+PUT    /api/karyawan/{id}
+DELETE /api/karyawan/{id}
+```
+
+---
+
+## Audit Log
+
+```http
+GET /api/tlog
+```
+
+---
+
+## Export PDF
+
+```http
+GET /api/report/pdf
+```
+
+---
+
+# Struktur Project
+
+```txt
+hr-fullstack/
+├── app/
+├── database/
+│   ├── migrations/
+│   └── sql/
+│       └── trigger.sql
+├── public/
+│   └── assets/
+├── resources/
+│   └── views/
+├── routes/
+│   ├── api.php
+│   └── web.php
+```
+
+---
+
+# Catatan
+
+* Project menggunakan JWT Authentication
+* Semua API protected menggunakan token
+* Audit log otomatis berjalan menggunakan database trigger
+* Frontend menggunakan Blade + KaiAdmin Template
