@@ -3,11 +3,11 @@
 </p>
 
 <h1 align="center">
-  HR Management System
+  HR Trigger Audit System
 </h1>
 
 <p align="center">
-  Laravel 11 • JWT Auth • REST API • Audit Log • PDF Report
+  Laravel 11 | JWT Auth | RESTful API | Audit Log | PDF Report
 </p>
 
 ---
