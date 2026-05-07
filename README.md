@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <img src="assets/img/hr-system.png" width="100%">
 </p>
@@ -67,6 +68,73 @@ cp .env.example .env
 Windows CMD:
 
 ```bash
+=======
+# HR Management System
+
+HR Fullstack Trigger Audit Log:
+
+* JWT Authentication
+* CRUD Karyawan
+* RESTful API
+* Trigger Audit Log
+* Audit Log DataTables
+* Export PDF
+* KaiAdmin Template
+
+---
+
+# Tech Stack
+
+* Laravel 11
+* MySQL / MariaDB
+* JWT Auth
+* Bootstrap 5
+* KaiAdmin
+* Axios
+* DataTables
+* DOMPDF
+
+---
+
+# Default Login
+
+```txt
+Email    : admin@gmail.com
+Password : pass123
+```
+
+---
+
+# Instalasi Project
+
+## 1. Clone Repository
+
+```bash
+git clone <repository-url>
+```
+
+---
+
+## 2. Install Dependency
+
+```bash
+composer install
+```
+
+---
+
+## 3. Copy Environment
+
+Linux / Git Bash:
+
+```bash
+cp .env.example .env
+```
+
+Windows CMD:
+
+```bash
+>>>>>>> 79cb67b758898a75cf28d28b2b76b311cb00cd0e
 copy .env.example .env
 ```
 
