@@ -2,9 +2,17 @@
   <img src="public/assets/img/hr-system.png" width="100%">
 </p>
 
-# HR Management System
+<h1 align="center">
+  HR Management System
+</h1>
 
-HR Fullstack Trigger Audit Log:
+<p align="center">
+  Laravel 11 • JWT Auth • REST API • Audit Log • PDF Report
+</p>
+
+---
+
+# Features
 
 * JWT Authentication
 * CRUD Karyawan
@@ -38,7 +46,7 @@ Password : pass123
 
 ---
 
-# Instalasi Project
+# Installation
 
 ## 1. Clone Repository
 
@@ -48,7 +56,15 @@ git clone <repository-url>
 
 ---
 
-## 2. Install Dependency
+## 2. Masuk ke Folder Project
+
+```bash
+cd hr-fullstack
+```
+
+---
+
+## 3. Install Dependency
 
 ```bash
 composer install
@@ -56,7 +72,7 @@ composer install
 
 ---
 
-## 3. Copy Environment
+## 4. Copy Environment File
 
 Linux / Git Bash:
 
@@ -67,79 +83,12 @@ cp .env.example .env
 Windows CMD:
 
 ```bash
-=======
-# HR Management System
-
-HR Fullstack Trigger Audit Log:
-
-* JWT Authentication
-* CRUD Karyawan
-* RESTful API
-* Trigger Audit Log
-* Audit Log DataTables
-* Export PDF
-* KaiAdmin Template
-
----
-
-# Tech Stack
-
-* Laravel 11
-* MySQL / MariaDB
-* JWT Auth
-* Bootstrap 5
-* KaiAdmin
-* Axios
-* DataTables
-* DOMPDF
-
----
-
-# Default Login
-
-```txt
-Email    : admin@gmail.com
-Password : pass123
-```
-
----
-
-# Instalasi Project
-
-## 1. Clone Repository
-
-```bash
-git clone <repository-url>
-```
-
----
-
-## 2. Install Dependency
-
-```bash
-composer install
-```
-
----
-
-## 3. Copy Environment
-
-Linux / Git Bash:
-
-```bash
-cp .env.example .env
-```
-
-Windows CMD:
-
-```bash
->>>>>>> 79cb67b758898a75cf28d28b2b76b311cb00cd0e
 copy .env.example .env
 ```
 
 ---
 
-## 4. Generate Application Key
+## 5. Generate Application Key
 
 ```bash
 php artisan key:generate
@@ -165,8 +114,6 @@ DB_PASSWORD=
 ---
 
 # Buat Database
-
-Buat database baru:
 
 ```sql
 CREATE DATABASE HR;
@@ -217,7 +164,7 @@ JWT_TTL=1
 
 # Setup Database Trigger
 
-Jalankan file trigger SQL:
+Jalankan file SQL trigger:
 
 ## CMD
 
@@ -247,18 +194,18 @@ http://127.0.0.1:8000
 
 ---
 
-# Fitur Aplikasi
+# Fitur Detail
 
 ## Authentication
 
 * Login JWT
-* Token expired 1 menit
+* Token expired 1 minute
 
 ## Karyawan
 
 * Tambah data
 * Edit data
-* Hapus data
+* Delete data
 * List data
 
 ## Audit Log
@@ -334,6 +281,8 @@ hr-fullstack/
 ├── routes/
 │   ├── api.php
 │   └── web.php
+├── screenshots/
+└── README.md
 ```
 
 ---
